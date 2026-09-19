@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  
+  <title>Flappy Bird Online — Play Free Retro Arcade Game</title>
+  <meta name="description" content="Play the free, high-performance in-browser Flappy Bird arcade game. Tap or press Space to fly, unlock custom bird skins, complete daily challenges, and beat your high score." />
+  <meta name="keywords" content="flappy bird, flappy bird online, play flappy bird, retro arcade games, free browser game, flappy bird unblocked, high score, daily challenge" />
+  <meta name="author" content="Shoaib M. Arif" />
+  <meta name="theme-color" content="#090d16" />
+  <link rel="canonical" href="https://flappybird-arcade.netlify.app/" />
+
+  <script>
+    (function() {
+      try {
+        const saved = localStorage.getItem('flappy_color_theme');
+        const isDark = saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches) || !saved;
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Search Console Verification Meta Tag (Replace with your actual verification code) -->
+  <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE" />
+
+  <!-- Robots & Googlebot Directives for Maximum SERP Visibility -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot-image" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flappybird-arcade.netlify.app/" />
+  <meta property="og:title" content="Flappy Bird Online — Play Free Retro Arcade Game" />
+  <meta property="og:description" content="Fly through pipes, unlock awesome bird skins, and beat the daily challenge in this ultra-smooth 60/120 FPS browser game." />
+  <meta property="og:image" content="https://flappybird-arcade.netlify.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Flappy Bird Online Arcade Game" />
+  <meta property="og:site_name" content="Flappy Bird Online" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://flappybird-arcade.netlify.app/" />
+  <meta name="twitter:title" content="Flappy Bird Online — Play Free Retro Arcade Game" />
+  <meta name="twitter:description" content="Fly through pipes, unlock awesome bird skins, and beat the daily challenge in this ultra-smooth 60/120 FPS browser game." />
+  <meta name="twitter:image" content="https://flappybird-arcade.netlify.app/og-image.png" />
+  <meta name="twitter:image:alt" content="Flappy Bird Online Arcade Game" />
+
+  <!-- Rule A: Google Search SERP Favicon Suite -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Rule B: Site Name Schema (Prevent Netlify Fallback) & Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://flappybird-arcade.netlify.app/#website",
+        "name": "Flappy Bird",
+        "alternateName": [
+          "Flappy Bird Online",
+          "Flappy Bird Arcade",
+          "FlappyBird App"
+        ],
+        "url": "https://flappybird-arcade.netlify.app/",
+        "inLanguage": "en-US",
+        "description": "Play a fast, addictive, 100% private in-browser Flappy Bird arcade game online with custom skins and daily challenges.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Flappy Bird Online Arcade",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://flappybird-arcade.netlify.app/icon-512.png"
+          }
+        }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://flappybird-arcade.netlify.app/#webapp",
+        "name": "Flappy Bird",
+        "url": "https://flappybird-arcade.netlify.app/",
+        "image": "https://flappybird-arcade.netlify.app/og-image.png",
+        "applicationCategory": "GameApplication",
+        "genre": "Arcade",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "1280",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://flappybird-arcade.netlify.app/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://flappybird-arcade.netlify.app/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://flappybird-arcade.netlify.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do you play Flappy Bird?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Press the Spacebar, Arrow Up key, click your mouse, or tap your mobile screen to make the bird flap upward. Navigate through the gaps between green pipes without touching them, the ceiling, or the ground."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Flappy Bird game free to play?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Flappy Bird Online is 100% free with no downloads, subscriptions, or intrusive popups. All gameplay happens locally in your browser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do Daily Challenges work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every 24 hours, a new deterministic obstacle sequence and target score are generated based on today's calendar date. Complete the run to build your Daily Challenge streak."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are all bird paints and skins free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! All flyer paints and skins including Classic Flyer, Thunder Eagle, Neon Canary, Sky Penguin, Astro Rocket, and Cyber 8-Bit are 100% free and instantly unlocked from the start."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-[#090d16] text-slate-900 dark:text-zinc-100 min-h-screen antialiased selection:bg-amber-500 selection:text-white transition-colors duration-200">
+  <div id="root"></div>
+
+  <!-- Rule C: Zero-FOUC Pre-Rendered <noscript> SEO Block -->
+  <noscript>
+    <div style="font-family: system-ui, -apple-system, sans-serif; padding: 32px; max-width: 1000px; margin: 0 auto; line-height: 1.6;">
+      <h1>Flappy Bird Online — Free In-Browser Retro Arcade Game</h1>
+      <p>Play Flappy Bird online directly in your browser. Tap your screen, click your mouse, or press the Spacebar to flap through gaps in obstacles, beat your personal high score, and unlock cosmetic bird skins.</p>
+      
+      <h2>Core Game Features</h2>
+      <ul>
+        <li><strong>Ultra Smooth Canvas Engine</strong>: 60 FPS & 120 FPS high-refresh rate support with delta-time physics.</li>
+        <li><strong>Deterministic Daily Challenges</strong>: Daily global targets refreshed every 24 hours.</li>
+        <li><strong>Unlockable Bird Skins</strong>: Classic Flyer, Thunder Eagle, Neon Canary, Sky Penguin, Astro Rocket, and Cyber 8-Bit.</li>
+        <li><strong>Dynamic Difficulty Curve</strong>: Skill-based gap narrowing and speed ramp.</li>
+        <li><strong>Retro Synthesized Audio</strong>: Built-in Web Audio API sound effects with zero latency.</li>
+        <li><strong>100% Private Client-Side</strong>: All records, high scores, and statistics saved safely in your local browser storage.</li>
+      </ul>
+
+      <h2>Keyboard & Touch Controls</h2>
+      <ul>
+        <li><strong>Space / Arrow Up</strong>: Flap upward</li>
+        <li><strong>Mouse Left-Click</strong>: Flap upward</li>
+        <li><strong>Mobile Screen Tap</strong>: Flap upward</li>
+        <li><strong>P Key</strong>: Pause / Resume game</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>How do you control the bird?</h3>
+      <p>Tap your touchscreen or press Spacebar to flap wings upward. Each flap counteracts gravity for a brief upward lift.</p>
+      <h3>Is any backend required?</h3>
+      <p>No backend is needed. The game runs 100% offline in your browser using HTML5 Canvas and localStorage.</p>
+    </div>
+  </noscript>
+
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
+

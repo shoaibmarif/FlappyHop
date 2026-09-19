@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Host: https://flappybird-arcade.netlify.app/
+Sitemap: https://flappybird-arcade.netlify.app/sitemap.xml
