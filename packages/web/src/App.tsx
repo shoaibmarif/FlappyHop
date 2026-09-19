@@ -43,6 +43,7 @@ export const App: React.FC = () => {
           onOpenStats={() => setIsStatsOpen(true)}
           onOpenAchievements={() => setIsAchievementsOpen(true)}
           onOpenSkins={() => setIsSkinsOpen(true)}
+          isHome={false}
         />
         <main className="max-w-7xl mx-auto px-4 py-8 flex-1 w-full">
           <NotFound />
@@ -64,6 +65,7 @@ export const App: React.FC = () => {
           onOpenStats={() => setIsStatsOpen(true)}
           onOpenAchievements={() => setIsAchievementsOpen(true)}
           onOpenSkins={() => setIsSkinsOpen(true)}
+          isHome={false}
         />
         <main className="max-w-4xl mx-auto px-4 py-8 sm:py-12 flex-1 w-full">
           <PrivacyPolicy />
@@ -84,6 +86,7 @@ export const App: React.FC = () => {
         onOpenStats={() => setIsStatsOpen(true)}
         onOpenAchievements={() => setIsAchievementsOpen(true)}
         onOpenSkins={() => setIsSkinsOpen(true)}
+        isHome={true}
       />
 
       <main className="max-w-5xl mx-auto px-4 py-6 sm:py-10 flex-1 w-full flex flex-col items-center">

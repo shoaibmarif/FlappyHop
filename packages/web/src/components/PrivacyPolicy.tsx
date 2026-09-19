@@ -15,7 +15,7 @@ export const PrivacyPolicy: React.FC = () => {
     }
     metaRobots.content = 'noindex, follow';
 
-    document.title = 'Privacy Policy — Flappy Bird Online';
+    document.title = 'Privacy Policy — Flappy Hop';
 
     return () => {
       if (metaRobots) {
@@ -25,7 +25,7 @@ export const PrivacyPolicy: React.FC = () => {
           metaRobots.content = 'index, follow';
         }
       }
-      document.title = 'Flappy Bird Online — Play Free Retro Arcade Game';
+      document.title = 'Flappy Hop — Play Free Retro Arcade Game Online';
     };
   }, []);
 
@@ -56,7 +56,7 @@ export const PrivacyPolicy: React.FC = () => {
       </div>
 
       <p className="lead text-base text-slate-600 dark:text-zinc-300">
-        Your privacy is paramount. <strong>Flappy Bird Online</strong> operates as a 100% client-side web application and Chrome extension. We do not collect, store, transmit, or monetize any personal data.
+        Your privacy is paramount. <strong>Flappy Hop</strong> operates as a 100% client-side web application and Chrome extension. We do not collect, store, transmit, or monetize any personal data.
       </p>
 
       <h2 className="text-xl font-bold mt-8 mb-4">1. Information Collection and Storage</h2>
@@ -81,7 +81,7 @@ export const PrivacyPolicy: React.FC = () => {
 
       <h2 className="text-xl font-bold mt-8 mb-4">4. Children's Privacy (COPPA Compliance)</h2>
       <p className="text-sm leading-relaxed text-slate-600 dark:text-zinc-400">
-        Because we do not collect any personal data whatsoever, Flappy Bird Online is safe and fully compliant with the Children's Online Privacy Protection Act (COPPA).
+        Because we do not collect any personal data whatsoever, Flappy Hop is safe and fully compliant with the Children's Online Privacy Protection Act (COPPA).
       </p>
 
       <h2 className="text-xl font-bold mt-8 mb-4">5. Contact</h2>

@@ -1,4 +1,7 @@
 # 🐦 Flappy Bird — Production Monorepo & Chrome Extension
+# 🐦 Flappy Hop — Production Monorepo & Chrome Extension
+
+**Live Web App**: [https://flappyhop.netlify.app/](https://flappyhop.netlify.app/)
 
 A production-grade, 100% client-side retro arcade game built with **React 19**, **TypeScript**, **HTML5 Canvas**, and **Tailwind CSS**. Includes an ultra-smooth 60/120 FPS delta-time game loop, Web Audio API sound synthesis, unlockable bird skins, deterministic daily challenges, lifetime statistics, Manifest V3 Chrome Extension, and technical SEO optimizations following the Master Architecture specification.
 
@@ -160,12 +163,24 @@ npm run build
 
 ---
 
-## 🏆 Unlockable Bird Skins
+## 🏆 Bird Skins (100% Free & Unlocked)
 
-- **Classic Flyer**: Default arcade golden bird (Score 0).
-- **Thunder Eagle**: Fierce raptor with sharp reflexes (Score 15).
-- **Neon Canary**: High-voltage vibrant plumage (Score 30).
-- **Sky Penguin**: Defying physics with cold confidence (Score 50).
-- **Astro Rocket**: High-speed arcade projectile (Score 75).
-- **Cyber 8-Bit**: Retro neon scanline champion (Score 100).
+All cosmetic styles are completely free and unlocked from the very start:
+- **Classic Flyer**: Default arcade golden bird.
+- **Thunder Eagle**: Fierce raptor with sharp reflexes.
+- **Neon Canary**: High-voltage vibrant plumage.
+- **Sky Penguin**: Defying physics with cold confidence.
+- **Astro Rocket**: High-speed arcade projectile.
+- **Cyber 8-Bit**: Retro neon scanline champion.
+
+---
+
+## 👤 Author & Links
+
+Developed with ❤️ by **Shoaib M. Arif**:
+
+- **Portfolio**: [shoaibarif.vercel.app](https://shoaibarif.vercel.app/)
+- **GitHub**: [@shoaibmarif](https://github.com/shoaibmarif)
+- **LinkedIn**: [shoaibmarif](https://www.linkedin.com/in/shoaibmarif/)
+
 

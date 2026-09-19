@@ -10,5 +10,6 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Host: https://flappybird-arcade.netlify.app/
-Sitemap: https://flappybird-arcade.netlify.app/sitemap.xml
+Host: https://flappyhop.netlify.app/
+Sitemap: https://flappyhop.netlify.app/sitemap.xml
+

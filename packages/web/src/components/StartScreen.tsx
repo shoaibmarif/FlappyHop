@@ -40,7 +40,7 @@ export const StartScreen: React.FC<StartScreenProps> = ({
         </div>
 
         <h1 className="text-4xl font-black tracking-tight text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] pointer-events-none">
-          FLAPPY BIRD
+          FLAPPY HOP
         </h1>
         <p className="text-white/80 text-xs font-medium mt-1 mb-6 drop-shadow pointer-events-none">
           Tap, click, or press Space to fly

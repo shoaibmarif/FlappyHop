@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "Flappy Bird - Retro Arcade Game",
+  "name": "Flappy Hop - Retro Arcade Game",
   "version": "1.0.0",
-  "description": "Play the fast, addictive, 100% private in-browser Flappy Bird arcade game directly from your browser toolbar.",
-  "homepage_url": "https://flappybird-arcade.netlify.app/",
+  "description": "Play the fast, addictive, 100% private in-browser Flappy Hop retro arcade game directly from your browser toolbar.",
+  "homepage_url": "https://flappyhop.netlify.app/",
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Play Flappy Bird",
+    "default_title": "Play Flappy Hop",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",

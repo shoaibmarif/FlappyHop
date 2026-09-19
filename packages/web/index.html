@@ -48,6 +48,7 @@
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://flappybird-arcade.netlify.app/" />
   <meta name="twitter:title" content="Flappy Bird Online — Play Free Retro Arcade Game" />
@@ -64,7 +65,15 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJMEVD1JE2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-JJMEVD1JE2');
+  </script>
   <!-- Rule B: Site Name Schema (Prevent Netlify Fallback) & Structured Data -->
   <script type="application/ld+json">
   {
@@ -89,7 +98,24 @@
             "@type": "ImageObject",
             "url": "https://flappybird-arcade.netlify.app/icon-512.png"
           }
+        },
+        "author": {
+          "@id": "https://shoaibarif.vercel.app/#author"
+        },
+        "creator": {
+          "@id": "https://shoaibarif.vercel.app/#author"
         }
+        "description": "Play a fast, addictive, 100% private in-browser Flappy Bird arcade game online with custom skins and daily challenges."
+      },
+      {
+        "@type": "Person",
+        "@id": "https://shoaibarif.vercel.app/#author",
+        "name": "Shoaib M. Arif",
+        "url": "https://shoaibarif.vercel.app/",
+        "sameAs": [
+          "https://github.com/shoaibmarif",
+          "https://www.linkedin.com/in/shoaibmarif/"
+        ]
       },
       {
         "@type": "WebApplication",
@@ -97,6 +123,12 @@
         "name": "Flappy Bird",
         "url": "https://flappybird-arcade.netlify.app/",
         "image": "https://flappybird-arcade.netlify.app/og-image.png",
+        "author": {
+          "@id": "https://shoaibarif.vercel.app/#author"
+        },
+        "creator": {
+          "@id": "https://shoaibarif.vercel.app/#author"
+        },
         "applicationCategory": "GameApplication",
         "genre": "Arcade",
         "operatingSystem": "All",
@@ -157,9 +189,11 @@
           {
             "@type": "Question",
             "name": "Are all bird paints and skins free to use?",
+            "name": "How do I unlock custom bird skins?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes! All flyer paints and skins including Classic Flyer, Thunder Eagle, Neon Canary, Sky Penguin, Astro Rocket, and Cyber 8-Bit are 100% free and instantly unlocked from the start."
+              "text": "Skins such as Thunder Eagle, Neon Canary, Sky Penguin, Astro Rocket, and Cyber 8-Bit are unlocked automatically as your personal best score reaches milestones (15, 30, 50, 75, and 100 points)."
             }
           }
         ]

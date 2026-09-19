@@ -1,7 +1,7 @@
 {
-  "name": "Flappy Bird - Retro In-Browser Arcade",
-  "short_name": "FlappyBird",
-  "description": "Play a fast, addictive, 100% private in-browser Flappy Bird arcade game online with custom skins and daily challenges.",
+  "name": "Flappy Hop — Free Retro In-Browser Arcade",
+  "short_name": "FlappyHop",
+  "description": "Play a fast, addictive, 100% private in-browser Flappy Hop retro arcade game online with custom skins and daily challenges.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#090d16",

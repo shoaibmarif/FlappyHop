@@ -192,21 +192,24 @@ export const LandingContent: React.FC<LandingContentProps> = ({
       </section>
 
       {/* Footer */}
-      <footer className="pt-8 border-t border-slate-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-zinc-400">
-        <div className="flex items-center gap-2">
+      <footer className="pt-8 border-t border-slate-200 dark:border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-zinc-400">
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
           <span>🐦 Flappy Bird Online</span>
+          <span>🐦 Flappy Hop Online</span>
           <span>•</span>
-          <span>High Performance Arcade</span>
+          <span>Created by</span>
+          <a
+            href="https://shoaibarif.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-slate-800 dark:text-zinc-200 hover:text-amber-500 dark:hover:text-amber-400 underline underline-offset-2 transition-colors"
+          >
+            Shoaib M. Arif
+          </a>
         </div>
 
-        <div className="flex items-center gap-4">
-          <a
-            href="/privacy"
-            className="hover:text-amber-500 transition-colors flex items-center gap-1"
-          >
-            <ShieldCheck className="w-4 h-4" />
-            <span>Privacy Policy</span>
-          </a>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+    
           <span>•</span>
           <a
             href="https://github.com/shoaibmarif"
@@ -215,6 +218,23 @@ export const LandingContent: React.FC<LandingContentProps> = ({
             className="hover:text-amber-500 transition-colors"
           >
             GitHub
+          </a>
+          <span>•</span>
+          <a
+            href="https://www.linkedin.com/in/shoaibmarif/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-amber-500 transition-colors"
+          >
+            LinkedIn
+          </a>
+          <span>•</span>
+          <a
+            href="/privacy"
+            className="hover:text-amber-500 transition-colors flex items-center gap-1"
+          >
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span>Privacy Policy</span>
           </a>
         </div>
       </footer>

@@ -263,7 +263,7 @@ export const Popup: React.FC = () => {
   }, [playBeep]);
 
   const openFullscreen = () => {
-    chrome.tabs.create({ url: 'https://flappybird-arcade.netlify.app/' });
+    chrome.tabs.create({ url: 'https://flappyhop.netlify.app/' });
   };
 
   return (
@@ -272,7 +272,7 @@ export const Popup: React.FC = () => {
       <div className="h-12 px-3 border-b border-zinc-800 flex items-center justify-between bg-zinc-900/80">
         <div className="flex items-center gap-2">
           <span className="text-xl">🐦</span>
-          <span className="font-black text-sm text-amber-400">FLAPPY BIRD</span>
+          <span className="font-black text-sm text-amber-400">FLAPPY HOP</span>
         </div>
 
         <div className="flex items-center gap-1">

@@ -2,19 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://flappybird-arcade.netlify.app/</loc>
+    <loc>https://flappyhop.netlify.app/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://flappybird-arcade.netlify.app/og-image.png</image:loc>
-      <image:title>Flappy Bird Online — Free In-Browser Arcade Game</image:title>
-      <image:caption>Play Flappy Bird in your browser with unlocked skins, 60 FPS physics, and daily challenges</image:caption>
+      <image:loc>https://flappyhop.netlify.app/og-image.png</image:loc>
+      <image:title>Flappy Hop Online — Free In-Browser Arcade Game</image:title>
+      <image:caption>Play Flappy Hop in your browser with unlocked skins, 60 FPS physics, and daily challenges</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://flappybird-arcade.netlify.app/icon-512.png</image:loc>
-      <image:title>Flappy Bird Arcade Icon</image:title>
-      <image:caption>Classic 60 FPS Flappy Bird Game Logo</image:caption>
+      <image:loc>https://flappyhop.netlify.app/icon-512.png</image:loc>
+      <image:title>Flappy Hop Arcade Icon</image:title>
+      <image:caption>Classic 60 FPS Flappy Hop Game Logo</image:caption>
     </image:image>
   </url>
 </urlset>
+
