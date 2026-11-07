@@ -1,0 +1,335 @@
+@import "tailwindcss";
+
+/* Dark mode follows the .dark class (night pond is the default). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Design tokens ─────────────────────────────────────────────────────────
+   "Moonlit pond": deep water, glowing fireflies, lotus pink and moon cream.
+   Light mode is the same pond on a bright morning. */
+@theme {
+  --font-display: "Fredoka", ui-rounded, system-ui, sans-serif;
+  --font-sans: "Nunito", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-pond: #eef8f1;
+  --color-pond-2: #def0e4;
+  --color-leaf: #ffffff;
+  --color-ink: #10302a;
+  --color-ink-2: #3c5e56;
+  --color-muted: #6b8a83;
+  --color-rim: #cfe5d8;
+
+  --color-firefly: #6a9a00;
+  --color-lotus: #d9467d;
+  --color-moon: #b88a00;
+  --color-reed: #2f9c4c;
+  --color-water: #11878f;
+  --color-ember: #e0602c;
+
+  --color-firefly-glow: #d9ff6a;
+  --color-lotus-glow: #ff8fb8;
+  --color-moon-glow: #ffe9a8;
+  --color-water-glow: #3ec6c1;
+}
+
+.dark {
+  --color-pond: #07141d;
+  --color-pond-2: #0c1f2b;
+  --color-leaf: #10283a;
+  --color-ink: #eaf7f2;
+  --color-ink-2: #b5cfc8;
+  --color-muted: #7d9b96;
+  --color-rim: #1e3d4f;
+
+  --color-firefly: #d9ff6a;
+  --color-lotus: #ff8fb8;
+  --color-moon: #ffe9a8;
+  --color-reed: #6fd38a;
+  --color-water: #3ec6c1;
+  --color-ember: #ff9a6b;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    background-color: var(--color-pond);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Moonlight, firefly glow and a few ripples on the water. */
+    background-image:
+      radial-gradient(38rem 24rem at 85% -6%, color-mix(in srgb, var(--color-moon-glow) 22%, transparent), transparent 70%),
+      radial-gradient(40rem 26rem at 5% 30%, color-mix(in srgb, var(--color-water-glow) 14%, transparent), transparent 70%),
+      radial-gradient(36rem 24rem at 60% 105%, color-mix(in srgb, var(--color-firefly-glow) 10%, transparent), transparent 70%);
+    background-attachment: fixed;
+  }
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--color-firefly-glow);
+    color: #10302a;
+  }
+  :focus-visible {
+    outline: 2.5px solid var(--color-firefly);
+    outline-offset: 2px;
+  }
+  button,
+  a {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@layer components {
+  /* Lily pad panels: very round, with a soft shadow on the water. */
+  .lily {
+    background: var(--color-leaf);
+    border: 1px solid var(--color-rim);
+    border-radius: 28px;
+    box-shadow: 0 18px 40px -26px rgb(4 40 40 / 0.45);
+  }
+  .dark .lily {
+    box-shadow: 0 18px 44px -24px rgb(0 0 0 / 0.75), inset 0 1px 0 rgb(255 255 255 / 0.04);
+  }
+
+  .glow-text {
+    color: var(--color-firefly);
+    text-shadow: 0 0 18px color-mix(in srgb, var(--color-firefly-glow) 55%, transparent);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 2.9rem;
+    padding: 0 1.35rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: transform 0.15s cubic-bezier(0.3, 1.6, 0.5, 1), box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+  .btn:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+  .btn:active {
+    transform: translateY(1px) scale(0.97);
+  }
+  .btn-glow {
+    color: #10302a;
+    background: var(--color-firefly-glow);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-firefly-glow) 25%, transparent), 0 10px 28px -10px color-mix(in srgb, var(--color-firefly-glow) 90%, transparent);
+  }
+  .btn-ghost {
+    color: var(--color-ink);
+    background: var(--color-leaf);
+    border: 1px solid var(--color-rim);
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-muted);
+  }
+  .btn-sm {
+    height: 2.3rem;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    height: 2.1rem;
+    padding: 0 0.85rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-rim);
+    background: var(--color-leaf);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-ink-2);
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-water);
+  }
+
+  /* Long-form text */
+  .prose-pond {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-ink-2);
+  }
+  .prose-pond h2 {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    font-weight: 600;
+    color: var(--color-ink);
+    margin: 2.5rem 0 0.75rem;
+  }
+  .prose-pond h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    margin: 1.75rem 0 0.5rem;
+  }
+  .prose-pond p,
+  .prose-pond ul,
+  .prose-pond ol {
+    margin-bottom: 1rem;
+  }
+  .prose-pond ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .prose-pond ul li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose-pond ul li::before {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    top: 0.62em;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 999px;
+    background: var(--color-firefly-glow);
+    box-shadow: 0 0 10px var(--color-firefly-glow);
+  }
+  .prose-pond ol {
+    list-style: decimal;
+    padding-left: 1.25rem;
+  }
+  .prose-pond a {
+    color: var(--color-water);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  .prose-pond strong {
+    color: var(--color-ink);
+  }
+  .prose-pond kbd {
+    font-family: ui-monospace, monospace;
+    font-size: 0.85em;
+    background: var(--color-pond-2);
+    border: 1px solid var(--color-rim);
+    border-radius: 8px;
+    padding: 0.05em 0.45em;
+  }
+}
+
+/* ── Animations ───────────────────────────────────────────────────── */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pop-up {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -8px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -46px) scale(1);
+  }
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+@keyframes ripple {
+  from {
+    transform: scale(0.6);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out both;
+}
+.animate-rise-in {
+  animation: rise-in 0.35s cubic-bezier(0.2, 1.2, 0.4, 1) both;
+}
+.animate-pop-up {
+  animation: pop-up 0.9s ease-out forwards;
+}
+.animate-bob {
+  animation: bob 2.4s ease-in-out infinite;
+}
+.animate-ripple {
+  animation: ripple 2.6s ease-out infinite;
+}
+
+.reduced-motion *,
+.reduced-motion ::before,
+.reduced-motion ::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

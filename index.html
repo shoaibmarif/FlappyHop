@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!--seo-head-->
+    <meta name="application-name" content="FlappyHop" />
+    <meta name="apple-mobile-web-app-title" content="FlappyHop" />
+    <meta name="author" content="Shoaib Arif" />
+    <meta name="theme-color" content="#eef8f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#07141d" media="(prefers-color-scheme: dark)" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Google Search shows a favicon only if it is a multiple of 48px (or SVG). -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    />
+
+    <!-- Apply the saved theme before first paint to avoid a flash. The night pond is the default. -->
+    <script>
+      (function () {
+        try {
+          var s = JSON.parse(localStorage.getItem('flappyhop_settings_v2') || 'null');
+          var t = s ? s.theme : localStorage.getItem('flappy_color_theme') || 'dark';
+          var dark = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Consent Mode defaults: analytics on unless the visitor opted out. Ads always off. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      (function () {
+        var optedOut = false;
+        try {
+          optedOut = localStorage.getItem('flappyhop.consent') === 'denied';
+        } catch (e) {}
+        gtag('consent', 'default', {
+          analytics_storage: optedOut ? 'denied' : 'granted',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied'
+        });
+      })();
+      gtag('js', new Date());
+      gtag('config', 'G-JJMEVD1JE2');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJMEVD1JE2"></script>
+  </head>
+  <body>
+    <div id="root"><!--seo-body--></div>
+    <noscript>
+      <p style="max-width: 40rem; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif">
+        FlappyHop is a game and needs JavaScript to play. Please enable JavaScript in your browser.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
