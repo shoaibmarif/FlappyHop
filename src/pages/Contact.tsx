@@ -32,7 +32,7 @@ const CARDS = [
 ];
 
 export const Contact: React.FC = () => (
-  <ContentPage path="/contact" eyebrow="Say hello" intro="Got an idea for a new frog or something in the pond? Something not working on your phone? I’d like to hear about it.">
+  <ContentPage path="/contact" intro="Got an idea for a new frog or something in the pond? Something not working on your phone? I’d like to hear about it.">
     <div className="grid gap-4 sm:grid-cols-3">
       {CARDS.map((c) => (
         <a

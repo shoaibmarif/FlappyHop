@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Lock, Pause, Play, RotateCcw, Share2, Shield } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { usePond } from '../../hooks/usePond';
-import { FROGS, frogById, makeRun, type RunOutcome } from '../../game/progress';
+import { FROGS, dailyPond, frogById, liveStreak, makeRun, type RunOutcome } from '../../game/progress';
 import type { Cause, World } from '../../game/world';
 import { FrogBadge } from './FrogBadge';
 import { trackEvent } from '../../lib/consent';
@@ -19,6 +19,8 @@ const CAUSES: Record<Cause, string> = {
 
 interface PondGameProps {
   title: string;
+  /** Show today's daily pond goal in the side panel (home page). */
+  showDailyLink?: boolean;
   seed?: number;
   daily?: { key: string; number: number; goal: number };
 }
@@ -32,7 +34,28 @@ interface Result {
   outcome: RunOutcome;
 }
 
-export const PondGame: React.FC<PondGameProps> = ({ title, seed, daily }) => {
+/** One line about today's daily pond, for the home page. */
+const TodayLine: React.FC = () => {
+  const { stats } = useApp();
+  const today = dailyPond();
+  const best = stats.daily.best[today.key] ?? 0;
+  const streak = liveStreak(stats, today.key);
+  return (
+    <Link to="/daily" className="group col-span-2 flex items-center justify-between rounded-2xl bg-pond-2 px-3 py-2.5 text-sm text-ink-2 transition-colors hover:text-ink">
+      <span>
+        <strong className="text-ink">Daily pond #{today.number}</strong>
+        <br />
+        {best >= today.goal ? `Goal reached (${best}/${today.goal})` : `Goal: ${today.goal} gaps${best ? `, best so far ${best}` : ''}`}
+        {streak > 0 && ` · ${streak}-day streak`}
+      </span>
+      <span className="font-display font-semibold text-water transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+        →
+      </span>
+    </Link>
+  );
+};
+
+export const PondGame: React.FC<PondGameProps> = ({ title, seed, daily, showDailyLink = false }) => {
   const { settings, updateSettings, stats, record, pushToast } = useApp();
   const [result, setResult] = useState<Result | null>(null);
   const [note, setNote] = useState('');
@@ -106,7 +129,9 @@ export const PondGame: React.FC<PondGameProps> = ({ title, seed, daily }) => {
                 {hud.score}
               </span>
               <span className="mt-1 flex items-center gap-2 rounded-full bg-black/25 px-3 py-0.5 text-sm font-bold text-white backdrop-blur">
-                ✨ {hud.flies}
+                <span className="h-2 w-2 rounded-full bg-firefly-glow shadow-[0_0_8px_var(--color-firefly-glow)]" aria-hidden="true" />
+                {hud.flies}
+                <span className="sr-only">fireflies</span>
                 {hud.combo > 1 && <span className="text-firefly-glow">×{hud.combo}</span>}
                 {hud.shield && <Shield className="h-4 w-4 text-moon-glow" aria-label="Glow shield active" />}
               </span>
@@ -216,8 +241,9 @@ export const PondGame: React.FC<PondGameProps> = ({ title, seed, daily }) => {
           </div>
           <div>
             <p className="text-xs font-bold text-muted">Fireflies</p>
-            <p className="font-display text-3xl font-bold glow-text">{stats.totalFlies.toLocaleString('en-US')}</p>
+            <p className="font-display text-3xl font-bold">{stats.totalFlies.toLocaleString('en-US')}</p>
           </div>
+          {showDailyLink && <TodayLine />}
           {daily && (
             <p className="col-span-2 rounded-2xl bg-pond-2 px-3 py-2 text-sm text-ink-2">
               Daily pond #{daily.number} · goal <strong className="text-ink">{daily.goal}</strong> gaps

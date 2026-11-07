@@ -9,7 +9,7 @@ import { openConsentSettings } from '../../lib/consent';
 
 const Column: React.FC<{ title: string; links: { to: string; label: string }[] }> = ({ title, links }) => (
   <div>
-    <h2 className="eyebrow mb-3">{title}</h2>
+    <h2 className="mb-3 font-display font-semibold text-ink">{title}</h2>
     <ul className="space-y-2">
       {links.map((l) => (
         <li key={l.to}>

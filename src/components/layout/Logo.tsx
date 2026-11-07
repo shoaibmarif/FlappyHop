@@ -22,8 +22,8 @@ export const LogoMark: React.FC<{ className?: string }> = ({ className = 'h-10 w
 
 export const Logo: React.FC = () => (
   <Link to="/" className="group flex items-center gap-2" aria-label="FlappyHop home">
-    <LogoMark className="h-10 w-10 transition-transform duration-300 group-hover:-translate-y-1 group-hover:-rotate-6" />
-    <span className="font-display text-2xl font-bold tracking-tight">
+    <LogoMark className="h-9 w-9 sm:h-10 sm:w-10 transition-transform duration-300 group-hover:-translate-y-1 group-hover:-rotate-6" />
+    <span className="font-display text-xl font-bold tracking-tight sm:text-2xl">
       Flappy<span className="glow-text">Hop</span>
     </span>
   </Link>

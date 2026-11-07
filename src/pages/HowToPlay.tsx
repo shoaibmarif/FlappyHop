@@ -5,7 +5,7 @@ import { DIFFICULTY } from '../game/world';
 import { FROGS } from '../game/progress';
 
 export const HowToPlay: React.FC = () => (
-  <ContentPage path="/how-to-play" eyebrow="The rules" intro="FlappyHop uses one button, but there’s a whole pond to learn. Here’s everything that can help you, and everything that can end a run.">
+  <ContentPage path="/how-to-play" intro="FlappyHop uses one button, but there’s a whole pond to learn. Here’s everything that can help you, and everything that can end a run.">
     <div className="prose-pond">
       <h2>Controls</h2>
       <ul>

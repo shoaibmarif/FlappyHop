@@ -19,7 +19,7 @@ const STARS = Array.from({ length: 70 }, (_, i) => {
   return { x: (a - Math.floor(a)) * W, y: (b - Math.floor(b)) * 300, r: (i % 3) * 0.4 + 0.5, tw: i * 0.7 };
 });
 
-function drawSky(ctx: CanvasRenderingContext2D, w: World, travel: number) {
+export function drawSky(ctx: CanvasRenderingContext2D, w: World, travel: number) {
   const phase = skyAt(w.score);
   const sky = SKIES[phase];
   const g = ctx.createLinearGradient(0, 0, 0, WATER_Y);
@@ -84,7 +84,7 @@ function drawSky(ctx: CanvasRenderingContext2D, w: World, travel: number) {
   ctx.fill();
 }
 
-function drawWater(ctx: CanvasRenderingContext2D, w: World, travel: number) {
+export function drawWater(ctx: CanvasRenderingContext2D, w: World, travel: number) {
   const g = ctx.createLinearGradient(0, WATER_Y, 0, H);
   g.addColorStop(0, '#16465a');
   g.addColorStop(1, '#071a26');
@@ -111,7 +111,7 @@ function drawWater(ctx: CanvasRenderingContext2D, w: World, travel: number) {
   ctx.fillRect(0, WATER_Y - 1, W, 2);
 }
 
-function drawVines(ctx: CanvasRenderingContext2D, x: number, bottom: number, t: number) {
+export function drawVines(ctx: CanvasRenderingContext2D, x: number, bottom: number, t: number) {
   // Dark trunk band at the top, then hanging strands with leaves.
   ctx.fillStyle = '#123321';
   ctx.fillRect(x - 6, -4, GATE_W + 12, 16);
@@ -140,7 +140,7 @@ function drawVines(ctx: CanvasRenderingContext2D, x: number, bottom: number, t: 
   }
 }
 
-function drawReeds(ctx: CanvasRenderingContext2D, x: number, top: number, t: number) {
+export function drawReeds(ctx: CanvasRenderingContext2D, x: number, top: number, t: number) {
   const heights = [0, 14, 4, 20, 8];
   for (let i = 0; i < 5; i++) {
     const sx = x + 4 + i * ((GATE_W - 8) / 4);
@@ -175,7 +175,7 @@ function drawReeds(ctx: CanvasRenderingContext2D, x: number, top: number, t: num
   }
 }
 
-function drawPad(ctx: CanvasRenderingContext2D, x: number, w: number, sunk: number | null, id: number, t: number) {
+export function drawPad(ctx: CanvasRenderingContext2D, x: number, w: number, sunk: number | null, id: number, t: number) {
   const depth = sunk === null ? 0 : Math.min(1, sunk / 1.2);
   ctx.globalAlpha = 1 - depth * 0.8;
   const y = WATER_Y + 2 + depth * 8 + Math.sin(t * 2 + id) * 1.2;
@@ -207,7 +207,7 @@ function drawPad(ctx: CanvasRenderingContext2D, x: number, w: number, sunk: numb
   ctx.globalAlpha = 1;
 }
 
-function glowDot(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, color: string, alpha: number) {
+export function glowDot(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, color: string, alpha: number) {
   const g = ctx.createRadialGradient(x, y, 0, x, y, r * 4);
   g.addColorStop(0, color);
   g.addColorStop(1, 'rgba(0,0,0,0)');
@@ -221,7 +221,7 @@ function glowDot(ctx: CanvasRenderingContext2D, x: number, y: number, r: number,
   ctx.fill();
 }
 
-function drawDragonfly(ctx: CanvasRenderingContext2D, x: number, y: number, t: number) {
+export function drawDragonfly(ctx: CanvasRenderingContext2D, x: number, y: number, t: number) {
   const flutter = Math.sin(t * 40) * 3;
   ctx.fillStyle = 'rgba(190, 240, 255, 0.55)';
   ctx.beginPath();

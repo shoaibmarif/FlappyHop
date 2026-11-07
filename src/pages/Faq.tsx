@@ -7,7 +7,7 @@ import { faqJsonLd } from '../seo/head';
 import { SITE } from '../seo/site';
 
 export const Faq: React.FC = () => (
-  <ContentPage path="/faq" eyebrow="Help" intro="The questions we hear most. If yours isn’t here, send a message." structuredData={faqJsonLd(FAQ_ITEMS)}>
+  <ContentPage path="/faq" intro="The questions we hear most. If yours isn’t here, send a message." structuredData={faqJsonLd(FAQ_ITEMS)}>
     <Accordion items={FAQ_ITEMS} />
     <p className="mt-8 text-ink-2">
       Still stuck? Email{' '}

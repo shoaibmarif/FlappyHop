@@ -11,7 +11,7 @@ export const Frogs: React.FC = () => {
   return (
     <ContentPage
       path="/frogs"
-      eyebrow="Collection"
+     
       intro="Every firefly you catch is saved. Collect enough and a new frog joins the pond. They all hop the same way, so pick whichever one makes you smile."
       wide
     >

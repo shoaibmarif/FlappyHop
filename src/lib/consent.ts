@@ -30,9 +30,13 @@ export function openConsentSettings() {
 }
 
 /**
- * Sends a custom event to Google Analytics, e.g. trackEvent('run_complete', { score: 12 }).
- * Consent Mode still applies: nothing is stored if the visitor opted out.
+ * Pushes a custom event to the Google Tag Manager data layer, e.g.
+ * trackEvent('run_complete', { score: 12 }). In GTM, a "Custom Event" trigger
+ * with the same name can forward it to Google Analytics. Consent Mode still applies.
  */
 export function trackEvent(event: string, params?: Record<string, unknown>) {
-  gtag()?.('event', event, params ?? {});
+  if (typeof window === 'undefined') return;
+  const w = window as unknown as { dataLayer?: unknown[] };
+  w.dataLayer = w.dataLayer || [];
+  w.dataLayer.push({ event, ...params });
 }

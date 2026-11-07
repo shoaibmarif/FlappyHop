@@ -4,7 +4,7 @@ import { ContentPage } from '../components/layout/ContentPage';
 import { SITE } from '../seo/site';
 
 export const About: React.FC = () => (
-  <ContentPage path="/about" eyebrow="The story" intro="FlappyHop is a small game about a frog, a pond and one very important button.">
+  <ContentPage path="/about" intro="FlappyHop is a small game about a frog, a pond and one very important button.">
     <div className="prose-pond">
       <h2>Why a frog?</h2>
       <p>

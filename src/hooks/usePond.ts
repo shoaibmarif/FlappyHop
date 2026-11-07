@@ -53,7 +53,7 @@ export function usePond({ frog, seed, onOver }: UsePondOptions) {
           break;
         case 'fly':
           sound.fly(e.combo);
-          addPop(e.combo > 1 ? `✨ ×${e.combo}` : '✨', 'fly');
+          addPop(e.combo > 1 ? `×${e.combo}` : '+1', 'fly');
           break;
         case 'glowbug':
           sound.glowbug();

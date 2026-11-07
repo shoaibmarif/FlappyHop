@@ -15,7 +15,7 @@ export const Privacy: React.FC = () => (
 
       <h2>Analytics</h2>
       <p>
-        We use Google Analytics to understand how many people visit, which pages and modes they use,
+        We use Google Analytics, loaded through Google Tag Manager, to understand how many people visit, which pages and modes they use,
         and roughly where in the world they are. It sets cookies to tell visits apart. We also record a few game events, such as a run ending or a score being shared, with details like the score and number of fireflies.
       </p>
       <p>
